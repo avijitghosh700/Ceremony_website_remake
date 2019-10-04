@@ -1,0 +1,25 @@
+.cardLink
+  display: block
+
+.card
+  overflow: hidden
+
+  &__img
+    width: 100%
+    height: 100%
+
+    &--img
+      width: 100%
+      height: 100%
+      transition: all 1s ease
+
+  &__cap
+    overflow: hidden
+    z-index: 1
+    background-color: rgba($bg-grey, .3)
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+
+  &:hover
+    .card__img--img
+      transform: scale(1.1)

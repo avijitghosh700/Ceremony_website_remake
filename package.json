@@ -1,0 +1,20 @@
+{
+  "name": "ceremony",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build":"tailwind build tailwindcss/src.css -o css/build.css",
+    "watch": "node-sass sass/main.sass css/style.css -w"
+  },
+  "author": "Avijit Ghosh",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "nicescroll": "^3.7.4",
+    "tailwindcss": "^1.1.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

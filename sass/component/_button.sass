@@ -1,0 +1,76 @@
+.btn
+  display: inline-block
+  text-transform: uppercase
+  position: relative
+  z-index: 10
+  transition: all .5s $bezier
+
+  &__primary
+    font-size: 1.3rem
+    padding: 1.5rem 3rem
+    border: .01rem solid #000
+    color: #000
+    font-weight: 600
+    letter-spacing: .2rem
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 0
+      height: 100%
+      background-color: #000
+      transition: all .5s $bezier
+
+    &:hover
+      color: #fff
+
+      &::before
+        width: 100%
+
+  &__primary-alt
+    font-size: 1.3rem
+    padding: 1.5rem 3rem
+    border: .01rem solid #fff
+    color: #fff
+    font-weight: 600
+    letter-spacing: .2rem
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 0
+      height: 100%
+      background-color: #fff
+      transition: all .5s $bezier
+
+    &:hover
+      color: #000
+
+      &::before
+        width: 100%
+
+  &__secondary
+    font-size: 1.5rem
+    padding: .5rem 0 
+    letter-spacing: .2rem
+
+    &::after
+      content: ''
+      position: absolute
+      height: .1rem
+      width: 0
+      background-color: #000
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      transition: all .5s $bezier
+
+    &:hover
+      &::after
+        width: 100%

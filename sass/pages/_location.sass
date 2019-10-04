@@ -1,0 +1,33 @@
+.location-hero
+  height: 70rem
+  oveflow: hidden
+
+  &__video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    -o-object-fit: cover
+
+  &__caption
+    left: 20%
+    top: 50%
+    transform: translate(-20%, -50%)
+
+    @include respond(phone)
+      width: 100%
+      text-align: center
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  &__desc
+    font-family: $font-2
+    font-size: 2rem
+
+.location-place
+  padding: 8rem 0 6rem 0
+
+  &__cardCap
+    text-align: center

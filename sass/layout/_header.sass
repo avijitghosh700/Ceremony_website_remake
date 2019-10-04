@@ -1,0 +1,218 @@
+.header
+  &__logo
+    .logo-path
+      fill: #fff
+
+  &__nav
+    @include respond(phone)
+      display: none
+
+  &__list
+    &--item
+      position: relative
+
+      &:not(:last-child)::after
+        content: ''
+        position: absolute
+        width: 0
+        height: .1rem
+        bottom: .5rem
+        left: 50%
+        background-color: #fff
+        transform: translateX(-50%)
+        transition: all .3s $bezier
+
+      &:hover
+        &:not(:last-child)::after
+          width: 80%
+
+    .active
+      &::after
+        width: 80%
+
+  .open
+    bottom: 0
+
+  &__searchBar
+    overflow: hidden
+    left: 0
+    right: 0
+    bottom: 100%
+    transition: all 1s $bezier
+    background-color: rgba(#000, .8)
+    backdrop-filter: blur(1.5rem)
+    -webkit-backdrop-filter: blur(1.5rem)
+
+    .form__row
+      width: 72rem
+      height: 30rem
+
+  &__search
+    font:
+      family: $font-1
+
+    &::placeholder
+      font-size: 3rem
+
+    &:focus
+      background-color: rgba(#000, .5)
+
+  &__searchBtn
+    font:
+      family: $font-1
+      weight: 600
+      size: 2rem
+
+    &:hover,
+    &:focus
+      background-color: darken(#fff, 10%)
+      outline: none
+
+  .close
+    right: 0
+    top: -10rem
+    cursor: pointer
+
+  &__quickLink
+    .quickLink
+      &__item
+        position: relative
+
+        &:not(:last-child)::after
+          content: ''
+          position: absolute
+          top: 50%
+          right: 0
+          width: .5rem
+          height: .5rem
+          border-radius: 10rem
+          background-color: #fff
+          transform: translateY(-50%)
+
+      &__link
+        font:
+          family: $font-2
+          size: 4rem
+
+        &:hover
+          text-decoration: underline
+
+  &__trigger
+    position: relative
+    display: none
+    align-items: center
+    justify-content: flex-end
+    width: 4rem
+    height: 3rem
+    cursor: pointer
+    transition: all .5s $bezier
+
+    &:focus
+      outline: none
+
+    @include respond(phone)
+      display: flex
+
+    &--bar
+      width: 80%
+      height: .3rem
+      background-color: #fff
+      transition: all .5s $bezier
+
+    &::before
+      content: ''
+      position: absolute
+      width: 100%
+      right: 0
+      height: .3rem
+      transform: translateY(-1rem)
+      background-color: #fff
+      transition: all .5s $bezier
+
+    &::after
+      content: ''
+      position: absolute
+      width: 60%
+      right: 0
+      height: .3rem
+      transform: translateY(1rem)
+      background-color: #fff
+      transition: all .5s $bezier
+
+  .triggered
+    transform: rotate(180deg)
+
+    .header__trigger--bar
+      visibility: hidden
+      opacity: 0
+
+    &::before
+      width: 100%
+      transform: rotate(-45deg) translateY(0)
+
+    &::after
+      width: 100%
+      transform: rotate(45deg) translateY(0)
+
+  .navOpen
+    left: 0 !important
+
+  &__mobileNav
+    position: fixed
+    display: none
+    top: 8rem
+    bottom: 0
+    right: 0
+    left: 100%
+    background-color: rgba(#000, .8)
+    font-size: 5rem
+    letter-spacing: .2rem
+    overflow-y: auto
+    overflow-x: hidden
+    transition: all 1s $bezier
+
+    @include respond(phone)
+      display: block
+
+    &--list
+      padding: 1rem 0 0 1.5rem
+
+    &--item
+      visibility: hidden
+      opacity: 0
+      transform: translateY(2rem)
+      transition: all 1s $bezier
+
+      &:not(:last-child)
+        margin-bottom: 1rem
+
+  &__mobileForm
+    display: flex
+    visibility: hidden
+    opacity: 0
+    transform: translateY(2rem)
+    padding: 3rem 1.5rem 0
+    transition: all 1s $bezier
+
+    &--search
+      width: 100%
+      background-color: transparent
+      border-bottom: .2rem solid #fff
+      border-top: .2rem solid #fff
+      border-left: .2rem solid #fff
+      padding: 1.5rem 2rem
+      font-size: 3rem
+      border-radius: 1rem 0 0 1rem
+
+    &--btn
+      width: 13rem
+      font-size: 3rem
+      border-bottom: .2rem solid #fff
+      border-top: .2rem solid #fff
+      border-right: .2rem solid #fff
+      border-radius: 0 1rem 1rem 0
+
+  .item-reset
+    visibility: visible
+    opacity: 1
+    transform: translateY(0)

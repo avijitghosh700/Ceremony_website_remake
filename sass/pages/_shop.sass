@@ -1,0 +1,35 @@
+.shop
+  padding: 15rem 0 8rem 0
+
+  @include respond(phone)
+    padding: 10rem 0 4rem 0
+
+.dial
+  display: flex
+
+  @include respond(phone)
+    flex-wrap: wrap
+
+  &__img
+    @include respond(phone)
+      height: 40rem
+
+    &--img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__cap
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $bg-green
+    color: #fff
+    padding: 5rem 10rem
+
+    @include respond(phone-land)
+      padding: 5rem 3rem
+
+    &--desc
+      & > h1
+        font-family: $font-2

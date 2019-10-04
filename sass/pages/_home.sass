@@ -1,0 +1,271 @@
+.hero
+  &__slideCont
+    height: 70rem
+
+  &__slideContent
+    max-width: 35rem
+    width: calc(100% - 1.5rem)
+    top: 80%
+    left: 20%
+    transform: translate(-20%, -80%)
+
+    @include respond(phone-sm)
+      top: 60%
+      left: 50%
+      transform: translate(-50%, -60%)
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 100%
+      height: 0
+      background-color: #fff
+      transition: all 1s $bezier
+
+    &--sub
+      transform: translateY(5rem)
+      will-change: transform
+      transition: all 1s $bezier .3s
+
+    &--heading
+      transform: translateY(5rem)
+      will-change: transform
+      transition: all 1s $bezier .3s
+
+    &--desc
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .4s
+
+    &--btnGrp
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .4s
+
+  // Animation Trigger
+  .slideContentShown
+    &::after
+      height: 100%
+
+    .hero__slideContent--sub
+      transform: translateY(0)
+
+    .hero__slideContent--heading
+      transform: translateY(0)
+
+    .hero__slideContent--desc
+      opacity: 1
+      visibility: visible
+
+    .hero__slideContent--btnGrp
+      opacity: 1
+      visibility: visible
+
+.arrivals
+  &__header
+    max-width: 40rem
+
+.serve
+  position: relative
+
+  &__row
+    position: relative
+
+  &__content
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: all 1s $bezier .5s
+
+    @include respond(phone-land)
+      transform: translate(0)
+      margin-bottom: 5rem
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 0
+      height: 100%
+      background-color: rgba($bg-grey, 1)
+      transition: all 1s $bezier
+
+    &--heading
+      font-family: $font-2
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+    &--desc
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+.coffee
+  &__img
+    @include respond(phone-land)
+      height: 50rem
+
+    @include respond(phone)
+      height: 40rem
+
+  &__content
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    @include respond(phone-land)
+      transform: translate(0)
+      margin-bottom: 5rem
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 0
+      margin-left: 100%
+      height: 100%
+      transform: rotate(180deg)
+      background-color: rgba($bg-grey, 1)
+      transition: all 1s $bezier
+
+    &--heading
+      font-family: $font-2
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+    &--desc
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+.tech
+  &__img
+    @include respond(phone-land)
+      height: 50rem
+
+    @include respond(phone)
+      height: 40rem
+
+  &__content
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    @include respond(phone-land)
+      transform: translate(0)
+      margin-bottom: 5rem
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 0
+      height: 100%
+      transform: rotate(180deg)
+      background-color: rgba($bg-grey, 1)
+      transition: all 1s $bezier
+
+    &--heading
+      font-family: $font-2
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+    &--desc
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+.support
+  &__img
+    @include respond(phone-land)
+      height: 50rem
+
+    @include respond(phone)
+      height: 40rem
+
+  &__content
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    @include respond(phone-land)
+      transform: translate(0)
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 0
+      margin-left: 100%
+      height: 100%
+      transform: rotate(180deg)
+      background-color: rgba($bg-grey, 1)
+      transition: all 1s $bezier
+
+    &--heading
+      font-family: $font-2
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+    &--desc
+      opacity: 0
+      visibility: hidden
+      transition: all 1s $bezier .5s
+
+// Animation Trigger
+.contentShown
+  &::after
+    width: 100%
+    margin-left: 0
+
+  .serve__content--heading,
+  .coffee__content--heading,
+  .tech__content--heading,
+  .support__content--heading,
+  .serve__content--desc,
+  .coffee__content--desc,
+  .tech__content--desc,
+  .support__content--desc
+    opacity: 1
+    visibility: visible
+
+.education
+  &__img
+    height: 60rem
+
+    @include respond(phone)
+      height: 50rem
+
+  &__content
+    top: 0
+    left: 0
+    color: #000
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(#fff, .5)
+      backdrop-filter: blur(1rem)
+      -webkit-backdrop-filter: blur(1rem)
+
+    &--heading
+      font-family: $font-2

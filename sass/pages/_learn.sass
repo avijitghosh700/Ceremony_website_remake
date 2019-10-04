@@ -1,0 +1,33 @@
+.learn-banner
+  height: 70rem
+  overflow: hidden
+
+  &__img
+    object-position: center
+
+  &__caption
+    top: 50%
+    left: 20%
+    transform: translate(-20%, -50%)
+
+    @include respond(phone)
+      width: 100%
+      text-align: center
+      left: 50%
+      transform: translate(-50%, -50%)
+
+    &--desc
+      font-family: $font-2
+      font-size: 2rem
+
+.learn-topic
+  &__view
+    overflow: hidden
+
+    &--img
+      transition: all 1s $bezier
+
+  &__cardLink
+    &:hover
+      .learn-topic__view--img
+        transform: scale(1.1)

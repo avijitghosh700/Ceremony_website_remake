@@ -1,0 +1,31 @@
+.product
+  padding: 15rem 0 8rem 0
+
+  @include respond(phone)
+    padding: 10rem 0 8rem 0
+
+  &__view
+    height: 45rem
+
+    @include respond(phone)
+      height: 60rem;
+
+    @include respond(phone-sm)
+      height: 50rem;
+
+    &--img
+      object-position: center 38%
+
+  &__quantity
+    .quantity
+      cursor: pointer
+
+    .fa
+      position: absolute
+      top: 56%
+      right: 2rem
+      pointer-events: none;
+
+  &__desc
+    &--para
+      color: lighten(#000, 20%)
