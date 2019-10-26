@@ -282,7 +282,7 @@
           <div class="thanksMsg mb-3">
             <h1 class="heading-secondary text-6xl">
               <?php  
-                echo 'Thank you for puchase, '.strtok($_POST['username'], ' ').'.'; 
+                echo 'Thank you for purchase, '.strtok($_POST['username'], ' ').'.'; 
               ?>
             </h1>
           </div>
